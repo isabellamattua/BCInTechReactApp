@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Footer } from './components/footer/Footer';
+import { Header } from './components/header/Header';
+import Main from './components/main/Main';
+
+const appStyles = {
+  display: 'grid',
+  gridTemplateRows: 'min-content auto min-content'
+}
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    //Declare a global state
+    //Values that can be manipulated and passed between components 
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div style={appStyles}>
+          <Header />
+          <Main />
+          <Footer />
+        </div>
     );
   }
 }
